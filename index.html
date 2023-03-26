@@ -1,18 +1,158 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Portal -YNTIWARI DTBS</title>
+    <style>
+      * {
+      box-sizing: border-box;
+    }
+.logo img{
+	max-width: 100%;
+	width: 200px;
+	height: auto;
+}
 
-<center> <h1>Welcome to Database Portal of yntiwari.com.np</h1> </center>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F2F2F2;
+      margin: 0;
+      padding: 0;
+    }
 
-<center> <form action="/action_page.php">
-  <label for="name">Username:</label>
-  <input type="name" id="name" name="name"><br><br>
-  <label for="pwd">Password:</label>
-  <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
-  </form>
-<button onclick="document.location='yntmain.html'">Submit</button>
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 50px 20px;
+      text-align: center;
+    }
 
+    .login-form {
+      background-color: #FFFFFF;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
 
-</center>
+    h1 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #3CB371;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      background-color: #F2F2F2;
+      color: #333;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      box-shadow: 0 0 5px #3CB371;
+    }
+
+    button[type="submit"] {
+      background-color: #3CB371;
+      color: #FFFFFF;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2E8B57;
+    }
+
+    .error {
+      color: #e74c3c;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    </style>
+  </head>
+  <body>
+  <div class="container">
+    <div class="header">
+      <center> <img src="https://yntiwari.com.np/img/logoyn.png" class="logo" alt="YNT DTBS"> </center>
+      <h1>Welcome to YNTIWARI.COM.NP DTBS Portal</h1>
+    </div>
+    <div class="form-container">
+      <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit" onclick="document.location='https://dtbs.yntiwari.com.np/yntmain.html'" >Login</button>
+        <div class="error"></div>
+      </form>
+    </div>
+    <div class="footer">
+<br><br><br>
+      <b>&copy; 2023 Yuwaditya Nidhi Tiwari. All Rights Reserved.</b>
+    </div>
+  </div>
+
+    <script>
+     
+      function login() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var error = document.getElementById("error");
+
+        if (email == "") {
+          error.innerHTML = "Please enter your email address";
+          return false;
+        }
+        if (password == "") {
+          error.innerHTML = "Please enter your password";
+          return false;
+        }
+
+        
+        if (email == "hi@yn.com" && password == "ahyesofc") {
+          window.location.replace("'https://yntiwari.com.np'");
+        } else {
+          error.innerHTML = "Incorrect email or password.";
+        }
+      }
+
+     
+      function redirectToDashboard() {
+        window.location.replace("'https://yntiwari.com.np'");
+      }
+    </script>
 </body>
 </html>
+
